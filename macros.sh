@@ -10,5 +10,8 @@ function workon()
         echo "Invalid workspace: ${WORKSPACE}" >&2
     else
         cd "${PREFIX}/${WORKSPACE}"
+        if [[ -f workspace.sh ]]; then
+            source workspace.sh
+        fi
     fi
 }
